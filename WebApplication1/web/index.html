@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISNOM - Iniciar Sesión</title>
+    <link rel="stylesheet" href="iniciosisnom.css">
+</head>
+<body>
+    <div class="main-layout">
+
+        <div class="card-container">
+            <div class="auth-card">
+
+                <div class="logo-section">
+                    <div class="logo-svg">
+                        <!-- SVG ORIGINAL -->
+                    </div>
+                    <h1 class="main-title">SISNOM</h1>
+                    <p class="subtitle">Sistema de Nómina Empresarial</p>
+                </div>
+
+                <!-- FORMULARIO CORREGIDO -->
+                <form action="login" method="POST">
+
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            name="usuario"
+                            class="form-input"
+                            placeholder="Usuario"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                            type="password"
+                            name="password"
+                            class="form-input"
+                            placeholder="Contraseña"
+                            required
+                        >
+                    </div>
+
+                    <div class="options-row">
+                        <label class="remember-me">
+                            <input type="checkbox">
+                            <span>Recordarme</span>
+                        </label>
+                        <a href="#" class="forgot-link">¿Olvidó su contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Iniciar Sesión
+                    </button>
+
+                    <a href="#" class="btn-register">Crear una cuenta</a>
+                    <p class="admin-help">¿Necesitas ayuda? Contacta al administrador</p>
+                </form>
+            </div>
+
+            <div class="external-footer">
+                <p class="copyright-text">
+                    SISNOM © 2024 - Gestión de Nómina
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
