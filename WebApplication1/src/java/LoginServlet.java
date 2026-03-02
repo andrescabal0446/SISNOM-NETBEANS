@@ -11,19 +11,19 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String usuario = request.getParameter("usuario");
+        String usuario = request.getParameter("email");
         String password = request.getParameter("password");
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/login_db",
+                "jdbc:mysql://localhost:3306/sisnom",
                 "root",
                 "123456"
             );
 
             PreparedStatement ps = conn.prepareStatement(
-                "SELECT * FROM usuarios WHERE usuario=? AND password=?"
+                "SELECT * FROM usuario WHERE correo=? AND contraseña=?"
             );
             ps.setString(1, usuario);
             ps.setString(2, password);
@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                response.sendRedirect("inicio.jsp");
+                response.sendRedirect("administrador.jsp");
             } else {
                 response.sendRedirect("index.html?error=1");
             }
